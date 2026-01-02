@@ -57,7 +57,7 @@ export function HeroCarousel() {
     <section className="relative">
       {/* Main Carousel */}
       <div
-        className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden"
+        className="relative h-[40vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden"
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
       >
@@ -69,13 +69,17 @@ export function HeroCarousel() {
               index === currentSlide ? "opacity-100" : "opacity-0 pointer-events-none",
             )}
           >
+            {/* Image (NOT CUT ON MOBILE) */}
             <Image
-              src={slide.image || "/placeholder.svg"}
+              src={slide.image}
               alt={slide.title}
               fill
-              className="object-cover"
               priority={index === 0}
+              sizes="100vw"
+              className="object-contain md:object-cover"
             />
+
+            {/* Existing dark overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
             {/* Content */}
@@ -101,7 +105,19 @@ export function HeroCarousel() {
           </div>
         ))}
 
-        {/* Navigation Arrows - Hidden on mobile */}
+        {/* 🔥 SMOOTH FADE INTO PAGE (THIS IS THE FIX) */}
+        <div
+          className="
+            pointer-events-none
+            absolute bottom-0 left-0 w-full
+            h-28 sm:h-24
+            bg-gradient-to-b
+            from-transparent
+            to-[#F5F0EB]
+          "
+        />
+
+        {/* Navigation Arrows (desktop only) */}
         <button
           onClick={prevSlide}
           className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full transition-colors hidden sm:block"
@@ -117,8 +133,8 @@ export function HeroCarousel() {
           <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </button>
 
-        {/* Slide Indicators */}
-        <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-1.5 sm:gap-2">
+        {/* Indicators */}
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2">
           {slides.map((_, index) => (
             <button
               key={index}
@@ -126,8 +142,8 @@ export function HeroCarousel() {
               className={cn(
                 "rounded-full transition-all",
                 index === currentSlide
-                  ? "bg-white w-6 sm:w-8 h-2.5 sm:h-3"
-                  : "bg-white/50 hover:bg-white/70 w-2.5 h-2.5 sm:w-3 sm:h-3",
+                  ? "bg-white w-8 h-3"
+                  : "bg-white/50 hover:bg-white/70 w-3 h-3",
               )}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -135,7 +151,7 @@ export function HeroCarousel() {
         </div>
       </div>
 
-      {/* Room Categories Bar */}
+      {/* Room Categories */}
       <div className="bg-[#F5F0EB] border-t border-[#E8E0D8]">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
           <div className="flex items-center gap-2 py-3 sm:py-4 overflow-x-auto scrollbar-hide">
@@ -143,7 +159,7 @@ export function HeroCarousel() {
               <Link
                 key={category.label}
                 href={category.href}
-                className="flex-shrink-0 px-4 sm:px-6 py-2 sm:py-2.5 bg-white hover:bg-[#8B4513] hover:text-white text-[#3D2314] font-medium text-xs sm:text-sm rounded-full border border-[#E8E0D8] hover:border-[#8B4513] transition-all"
+                className="flex-shrink-0 px-4 sm:px-6 py-2 bg-white hover:bg-[#8B4513] hover:text-white text-[#3D2314] font-medium text-xs sm:text-sm rounded-full border border-[#E8E0D8] hover:border-[#8B4513] transition-all"
               >
                 {category.label}
               </Link>

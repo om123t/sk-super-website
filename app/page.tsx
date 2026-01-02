@@ -19,7 +19,7 @@ const products = [
   {
     id: "xdhmr",
     name: "XDHMR Boards",
-    tagline: "Extra Dense, High Moisture Resistant",
+    tagline: "Extra Dense, High Moisture Resistant & 10 Years Warranty",
     image: "/images/xdhmr-product.png",
     description: "Superior water resistance perfect for kitchens and bathrooms with pre-laminated finish.",
   },
