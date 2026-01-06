@@ -7,12 +7,13 @@ const products = [
   {
     id: "plywood",
     name: "Premium Plywood",
-    tagline: "High-Quality Wood Panels",
+    tagline: "High-Quality Wood Panels | 25 Year warranty",
     image: "/images/plywood-product.jpg",
     specs: [
       { label: "Sizes Available", value: "7×4 ft, 8×4 ft" },
       { label: "Thickness Options", value: "6mm, 12mm, 18mm, 19mm" },
       { label: "Grade", value: "Premium Quality" },
+      { label: "Warranty", value: "25 Years" },
       { label: "Application", value: "Furniture, Interiors" },
     ],
     features: [
@@ -20,12 +21,13 @@ const products = [
       "Smooth surface finish for laminates",
       "Ideal for wardrobes & furniture",
       "Consistent thickness throughout",
+      "25-Year Warranty",
     ],
   },
   {
     id: "xdhmr",
     name: "XDHMR Boards",
-    tagline: "Extra Dense, High Moisture Resistant",
+    tagline: "10 Year warranty | Extra Dense, High Moisture Resistant",
     image: "/images/xdhmr-product.png",
     specs: [
       { label: "Size", value: "8×4 ft" },
@@ -39,21 +41,22 @@ const products = [
       "Pre-laminated with white finish",
       "Available in Plain, OSB, and BSB variants",
       "High screw holding capacity",
+      "10-Year Warranty",
     ],
   },
   {
     id: "flush-door",
     name: "Flush Doors",
-    tagline: "25 Year Guarantee | Waterproof | Gurjan",
+    tagline: "25 Year warranty | Waterproof | Gurjan",
     image: "/images/flush-door-product.jpg",
     specs: [
-      { label: "Warranty", value: "25 Years Guarantee" },
+      { label: "Warranty", value: "25 Years" },
       { label: "Thickness", value: "32mm" },
       { label: "Water Resistance", value: "100% Waterproof" },
       { label: "Core Material", value: "Gurjan Wood" },
     ],
     features: [
-      "25-year manufacturer guarantee",
+      "25-year manufacturer warranty",
       "100% waterproof construction",
       "Premium Gurjan wood core",
       "Ideal for main doors & bathrooms",
