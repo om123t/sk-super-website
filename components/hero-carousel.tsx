@@ -15,13 +15,13 @@ const slides = [
     cta: { label: "Explore Products", href: "/products" },
   },
   {
-    image: "/images/inspiration-board.png",
+    image: "/images/slide-2.jpeg",
     title: "Transform Your Bedroom",
     subtitle: "Premium XDHMR & Plywood solutions for luxurious and lasting bedroom interiors.",
     cta: { label: "View Inspiration", href: "/inspiration?room=bedroom" },
   },
   {
-    image: "/images/inspiration-board.png",
+    image: "/images/slide-3.jpeg",
     title: "Crafted for Excellence",
     subtitle: "Our goal is to create interiors that you will love for years to come.",
     cta: { label: "Learn More", href: "/about" },
